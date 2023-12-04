@@ -1,8 +1,10 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include<stdio.h>
+
+
 int main()
 {
-	const char*filename = "data.txt";
+	const char* filename = "data.txt";
 
 	FILE* file = fopen(filename, "r");
     if (file == NULL) {
@@ -11,8 +13,10 @@ int main()
     }
 
     int value;
-    int count = 0;
-    while (fscanf(file, "%1d", &value) == 1) {
+    int count=0;
+
+    while (fscanf(file, "%1d", &value) == 1){
+        
         if (count == 8) {
             printf("\n");
             count = 0;
@@ -24,10 +28,12 @@ int main()
         else if (value == 0) {
             printf("Å@");
         }
-        else {
+        else{
             printf("ñ≥å¯Ç»ílÇ™åüèoÇ≥ÇÍÇ‹ÇµÇΩ: %d\n", value);
             break;
         }
+
+        
     }
 
     fclose(file);
